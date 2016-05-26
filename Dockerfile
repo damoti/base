@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     python3-pip
 
-RUN pip install --upgrade pip wheel uwsgi
+RUN pip3 install --upgrade pip wheel
+RUN pip3 install uwsgi fabric3
 
 ENV PATH /usr/lib/dart/bin:$PATH
