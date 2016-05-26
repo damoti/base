@@ -7,6 +7,7 @@ RUN apt-key adv --fetch-keys http://dl.google.com/linux/linux_signing_key.pub &&
     > /etc/apt/sources.list.d/dart.list
 
 RUN apt-get update && apt-get install -y \
+    language-pack-en \
     dart \
     git \
     libyaml-dev \
@@ -15,6 +16,6 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     python3-pip
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip wheel uwsgi
 
 ENV PATH /usr/lib/dart/bin:$PATH
