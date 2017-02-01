@@ -2,7 +2,9 @@ FROM ubuntu:16.10
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apt update && apt install -y \
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y \
     apt-transport-https \
     curl \
     git \
@@ -19,7 +21,7 @@ RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > \
     /etc/apt/sources.list.d/dart_stable.list
 
-RUN apt update && apt upgrade && apt install -y dart
+RUN apt-get update && apt-get install -y dart
 
 RUN pip3 install --upgrade pip wheel
 RUN pip3 install uwsgi fabric3
