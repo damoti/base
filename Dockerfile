@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     language-pack-en \
+    libffi-dev \
+    libssl-dev \
     libyaml-dev \
     mercurial \
     python3 \
