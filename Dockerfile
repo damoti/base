@@ -21,12 +21,11 @@ RUN apt-get update && \
     python3-pip \
     vim
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN curl -sL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-RUN curl -sL https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > \
-    /etc/apt/sources.list.d/dart_stable.list
+RUN curl -sL https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
-RUN apt-get update && apt-get install -y dart nodejs
+RUN apt-get install -y dart nodejs
 
 RUN npm install gulp -g
 
