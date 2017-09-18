@@ -30,7 +30,7 @@ RUN apt-get install -y dart nodejs
 RUN npm install gulp -g
 
 RUN pip3 install --upgrade pip wheel
-RUN pip3 install uwsgi fabric3
+RUN pip3 install --upgrade requests uwsgi fabric3
 
 ENV PYTHONUNBUFFERED 1
 ENV PATH /usr/lib/dart/bin:$PATH
